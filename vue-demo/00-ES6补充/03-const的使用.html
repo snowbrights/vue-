@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+
+    <script>
+        //const声明一个只读的常量。一旦声明，常量的值就不能改变。
+        //const修饰的标识符必须赋值，必须有赋值，并不可改变。
+        // const name='why';
+        // name='abc';
+
+
+
+        // const name;
+
+        // var name;
+        // name='abc';
+
+
+        //常量的含义是指向的对象不能修改，但是可以改变对象内部的属性
+        const obj = {
+            name = 'why',
+            age = '18',
+            height = 1.88
+        }
+        console.log(obj);
+
+
+        obj.name = 'acc';
+        obj.age = 20;
+        obj.height = 176;
+
+        console.log(obj);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <!-- 正确的做法 -->
+    <div id="app">
+        <img v-bind:src="imgURL" alt="">
+        <a v-bind:href="hrefURL">网址链接</a>
+        <!-- 写死图片操作只需要在src下插入图片地址，动态插入则需要请求服务器 -->
+
+
+        <!-- 错误做法：这里不可以使用mustache语法
+        <img src="{{imgURL}}" alt="" -->
+
+        <!-- v-bind语法糖是直接写一个： -->
+        <!-- 同效果语句 -->
+        <div id="app">
+            <img :src="imgURL" alt="">
+            <a :href="hrefURL">网址链接</a>
+        </div>
+
+        <script src="../js/vue.js"></script>
+        <script>
+            const app = new Vue({
+                el = '#app',
+                data: {
+                    message: 'hello',
+                    imgURL: 'https://i0.hdslb.com/bfs/face/0022afc98a1f1044e7ef25d094997e61ce502e0e.jpg@160w_160h_1c.webp',
+                    hrefURL: 'www.baidu.com'
+                }
+            })
+        </script>
+
+</body>
+
+</html>

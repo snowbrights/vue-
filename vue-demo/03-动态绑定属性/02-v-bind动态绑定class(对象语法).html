@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .active {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!-- <h2 class="active">{{message}}</h2>
+        <h2 :class="active">{{message}}</h2> -->
+        <!-- <h2 :class="{类名1:boolean,类名2：boolean}">{{message}}</h2> -->
+        <h2 :class="{active:isActive, line：isLine}">{{message}}</h2>
+        <h2 class="title" :class="{active:isActive, line：isLine}">{{message}}</h2>
+        <!-- 大括号里跟着对象，有键（active）有值（布尔值） -->
+        <!-- VUE内部class合并 -->
+        <h2 class="title" :class="getClass()">{{message}}</h2>
+        <!-- 对方放到methods中的函数里了，这里只是调用 ,methods里的语句被我注释了，不然报错-->
+
+        <!-- 大括号里跟着对象，有键（active）有值（布尔值） -->
+        <!-- VUE内部class合并 -->
+        <button v-on:click="btnClick">按钮</button>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: 'app',
+            data: {
+                message: '你好阿',
+                active = 'active',
+                isActive: true,
+                isLine: true
+            },
+            methods: {
+                btnClick: function() {
+                    this.isActive = !this.isActive
+                },
+                /*                 getClasses:function(){
+                                    return(active: this.isActive,line: this.isLine)
+                                } */
+            }
+        })
+    </script>
+</body>
+
+</html>

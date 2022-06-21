@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+        <div v-if="tests.length">
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>课程名称</th>
+                        <th>考试日期</th>
+                        <th>难度</th>
+                        <th>考试次数</th>
+                        <th>记录</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="(item,index) in tests">
+                        <td>{{item.id}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.data}}</td>
+                        <td>{{item.level | showLevel}}</td>
+                        <td>
+                            <button @click="decrement(index)" v-bind:disabled='item.count <= 1'>-</button> {{item.count}}
+                            <button @click="increment(index)">+</button>
+                        </td>
+                        <td><button @click="removeHandle(index)">通过</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- 删除缓存：ctrl F5 -->
+            <h2>总难度：{{totalLevel}}⭐</h2>
+        </div>
+        <h2 v-else>大二结束了/(ㄒoㄒ)/~~</h2>
+    </div>
+
+
+    <script src="../js/vue.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

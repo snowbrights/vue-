@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <div id="app">
+        {{message}}
+
+        <!-- .stop 调用event.stopPropagation（）-->
+        <button @click.stop="btnClick"></button>
+        <!-- .prevent 调用event.preventDefauit（）-->
+
+        <!-- .{keyCode|keyAlias} 只当事件是从特定键触发时才触发回弹-->
+
+        <!-- .native 监听组件根元素的原生事件-->
+
+        <!-- .once 只触发一次回调 -->
+
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: 'app',
+            data: {
+                message: '你好阿'
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <me charset="UTF-8">
+        <title>Title</title>
+</head>
+
+<body>
+    <script>
+        // 经典写法
+        const obj = {
+            name: 'acc',
+            run: function() {
+                console.log('在奔跑');
+            },
+            eat: function() {
+                console.log('在拉屎');
+            }
+        }
+
+        //增强写法：
+        //1.属性的增强写法
+        const name = 'why';
+        const age = 18;
+        const height = 1.88
+
+        //ES5写法：
+        const obj = {
+                name: name,
+                age: age,
+                height: height
+            }
+            //ES6写法：
+        const obj = {
+            name,
+            age,
+            height,
+        }
+
+        //2.函数的增强写法
+
+        //ES6写法：
+        const obj = {
+            run() {
+
+            },
+            eat() {
+
+            }
+        }
+
+        console.log(obj);
+    </script>
+</body>
+
+</html>

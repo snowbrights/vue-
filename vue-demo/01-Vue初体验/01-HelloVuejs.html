@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <h1>{{message}}</h1>
+        <h2>{{name}}</h2>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        //let(变量)/const（常量）
+        //编程范式：声明式编程
+
+        let app = new Vue({
+            el: '#app', //挂载要管理的元素 此处为id:“app”，el是options的一种，决定之后的vue实例会管理哪一个DOM
+            //el属性：该属性决定了这个vue对象挂载到哪一个元素上，很明显，这里我们挂载到了id为app的元素上
+            data: { //data属性通常会存储一些数据，这些数据可以是自己直接定义的，也可以是来自网络服务器加载的
+                message: 'hard study!',
+                name: 'bright'
+            }
+
+        })
+    </script>
+</body>
+
+</html>

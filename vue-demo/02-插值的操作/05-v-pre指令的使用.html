@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <div id="app">
+        <h2 v-pre>{{message}}</h2>
+        <!-- 原文本显示内容，而对变量不做任何解析，这里就并不会解析成你好啊，而是直接以{{message}}输出 -->
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: 'app',
+            data: {
+                message: '你好阿'
+            }
+        })
+    </script>
+</body>
+
+</html>

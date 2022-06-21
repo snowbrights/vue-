@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1>当前计数：{{counter}}</h1>
+        <!--     <button v-on:click="counter++">+</button>
+    <button @click="counter--">-</button> -->
+        <button v-on:click="add">+</button>
+        <button v-on:click="sub">-</button>
+        <!-- 遍历：v-for
+        监听事件：v-on 
+    click: 事件类型（后续会讲到）
+这里的add函数用counter++就可以实现，但是为了满足更多要求的操作，用函数更优越更安全-->
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        //语法糖：简写（v-on==@）
+        //用obj取代data里的对象的方法，data里引入obj，原理都是一样的
+
+        // const obj = {
+        //     counter:0
+        // }
+
+        new Vue()
+
+        const app = new Vue({
+            //可以传入很多个options，这里有el,data,methods,也就是配置API
+            el = '#app',
+            data: {
+                counter: 0
+                    //初始赋值显示
+            },
+            methods: {
+                add: function() {
+                    console.log('add执行');
+                    this.counter++
+                        //this表示当前对象
+                        //consloe.log()在控制台上输出信息
+                },
+                sub: function() {
+                        console.log('sub执行');
+                        this.counter--
+
+                    }
+                    //方法methods
+                    //函数function
+            },
+            //这里通过三个引用说明了vue的生命周期：在一个new vue()新建后，vue会做一系列复杂的事情，通过源码可以观察其过程
+            beforeCreate: function() {
+
+            },
+            created: function() {
+                console.log('created');
+            },
+            mounted: function() {
+                console.log('created');
+            }
+        })
+    </script>
+</body>

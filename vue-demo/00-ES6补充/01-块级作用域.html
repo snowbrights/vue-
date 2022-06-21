@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+    <button>按钮4</button>
+    <button>按钮5</button>
+
+    <script>
+        //ES5之前因为if和for都没有块级作用域的概念，所以在很多时候，我们都必须借助function的作用域来解决应用外面变量的问题。
+        //ES6中，加入了let，let它是有if和for的块级作用域。
+
+        //1.变量作用域：变量在什么范围内是可用的。
+        // {
+        //     var name='why';
+        //     console.log(name);
+        // }
+        // console.log(name);
+        // console.log() 方法用于在控制台输出信息。
+
+
+        //2.没有块级作用域引起的问题:if的块级
+        //var:全局变量污染，全局不退场，作用域越大，代码理解越困难
+        // var func;
+        // if(true){
+        //     var name='why';
+
+        //     func = function(){
+        //         console.log(name);
+        //     }
+        // }
+        // // console.log(name);
+
+
+        //3.没有块级作用域引起的问题:for的块级
+        //addEventListener是谷歌DOM2级事件写法，相当于onclick
+        //为什么闭包可以解决i的问题：因为函数是一个作用域  
+        // var btns=document.getElementByTagName('button');
+        // for(var i=0;i<btns,length;i++){
+        //     (function(i){
+        //         btns[i].addEventListener('click',function(){
+        //         console.log('第' + i + '个按钮被点击');
+        //     })(i)
+        //     })
+        // }
+
+        //ES6:
+        const btns = document.getElementsByTagName('button')
+        for (let i = 1; i < btns.length; i++) {
+            btns[i].addEventListener('click', function() {
+                console.log('第' + i + '个按钮被点击');
+            })
+        }
+    </script>
+</body>
+
+</html>

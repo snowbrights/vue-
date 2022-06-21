@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <div id="app">
+        <h2 v-if="isShow">{{message}}</h2>
+        <div>abc</div>
+        <h1 v-else>isShow为false时候的显示</h1>
+    </div>
+    <!-- v-if 配合布尔值使用判断条件 -->
+    <!-- v-else if的另一个选项 -->
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: 'app',
+            data: {
+                message: '你好阿',
+                isShow: true
+            }
+        })
+    </script>
+</body>
+
+</html>

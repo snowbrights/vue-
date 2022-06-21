@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .title {
+            font-size: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!-- <h2 :style="{key(css属性名):value(属性值)}">{{message}}</h2> -->
+        <!-- 50px必须加上单引号，否则会被当作一个变量去解析 -->
+        <!-- <h2 :style="{fontSize: '50px'}">{{message}}</h2> -->
+
+        <!-- finalSize当作一个变量来使用，推荐这种习惯，严格满足vue的mvvm-->
+        <!-- <h2 :style="{fontSize: finalSize>{{message}} </h2>  -->
+
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: 'app',
+            data: {
+                message: '你好阿',
+                finalSize: '100px',
+                // Size：100
+                /* fontSize:thenSize +'px'    style该语句同义*/
+            },
+
+
+
+            // methods: {
+            //     getStyles:function(){
+            //         return{fontSize: this.finalSize +'px'}
+            //     }
+            // }
+        })
+    </script>
+</body>
+
+</html>
